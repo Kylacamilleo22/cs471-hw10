@@ -18,15 +18,15 @@ RUN apt install -y openjdk-8-jdk
 RUN apt install -y git
 
 # install maven to be able to build the heroku startup repository
-RUN apt install maven
-
+# RUN apt install maven
+RUN apt-get install -y -qq maven
 
 # === DATABASE SETUP - START ===
 # install PostgreSQL to allow the web application to store data in the local database
 # the DEBIAN_FRONTEND argument is needed to suppress the postgres prompts
 # for manually selecting the region and time zone
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get install -y -qq postgresql
+RUN apt-get install -y postgresql
 
 # change to 'postgres' user (created automatically when postgresql was installed using apt-get) to
 # allow issuing commands to alter the database
