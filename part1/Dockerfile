@@ -26,7 +26,7 @@ RUN apt install maven
 # the DEBIAN_FRONTEND argument is needed to suppress the postgres prompts
 # for manually selecting the region and time zone
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get install -y postgresql
+RUN apt-get install -y -qq postgresql
 
 # change to 'postgres' user (created automatically when postgresql was installed using apt-get) to
 # allow issuing commands to alter the database
