@@ -89,4 +89,4 @@ RUN chmod +x start_inside_container.sh
 
 # configure the container to run as an executable
 # (i.e., when a container is created and started, execute this script)
-# ENTRYPOINT ["./start_inside_container.sh"]
+ENTRYPOINT ["./start_inside_container.sh"]
